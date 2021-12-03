@@ -34,7 +34,8 @@ class AddressPrompt
         Console.WriteLine("1. - Add an Address");
         Console.WriteLine("2. - Edit the Addresses");
         Console.WriteLine("3. - Delete an Address");
-        Console.WriteLine("4. - Quit");
+        Console.WriteLine("4. - List All Addresses");
+        Console.WriteLine("5. - Quit");
     }
 
     void performAction(int choice)
@@ -95,7 +96,7 @@ class AddressPrompt
             case 3:
                Console.WriteLine("Enter Name to Delete: ");
               firstName = Console.ReadLine();
-              if (book.remove(firstName))
+                 if (book.remove(firstName))
                  {
                      Console.WriteLine("Address successfully removed");
                  }
@@ -104,7 +105,17 @@ class AddressPrompt
                      Console.WriteLine("Address for {0} could not be found.", firstName);
                  }
                  break;
-
+            case 4:
+                  if (book.isEmpty())
+                  {
+                   Console.WriteLine("There are no entries.");
+                  }
+                  else
+                  {
+                     Console.WriteLine("Addresses:");
+                    book.list((a) => Console.WriteLine("{0} - {1} - {2}- {3}- {4}- {5}- {6}- {7}", a.firstName, a.lastName, a.address, a.phoneNumber, a.city, a.state, a.zipCode, a.emailId));
+                  }
+                break;
             default:
                 Console.WriteLine("ReEnter the Choice");
                 break;
