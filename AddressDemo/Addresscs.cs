@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AddressBook
+namespace AddressDemo
 {
-    class Contacts
+    class Address
     {
         public string firstName;
         public string lastName;
@@ -16,7 +16,8 @@ namespace AddressBook
         public string state;
         public string zipCode;
         public string emailId;
-        public Contacts(string firstName, string lastName, string address, string phoneNumber, string city, string state, string zipCode, string emailId)
+
+        public Address(string firstName, string lastName, string address, string phoneNumber, string city, string state, string zipCode, string emailId)
         {
             this.firstName = firstName;
             this.lastName = lastName;
