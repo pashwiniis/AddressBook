@@ -30,10 +30,13 @@ namespace AddressDemo
                 return false;
             }
         }
+        public bool isEmpty()
+        {
+            return (addresses.Count == 0);
+        }
 
-      
 
-       public Address find(string firstName)
+        public Address find(string firstName)
        {
            Address addr = addresses.Find((a) => a.firstName == firstName);
            return addr;
