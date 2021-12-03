@@ -30,17 +30,31 @@ namespace AddressDemo
                 return false;
             }
         }
-        public bool isEmpty()
+        public bool remove(string firstName)
         {
-            return (addresses.Count == 0);
+            Address addr = find(firstName);
+
+            if (addr != null)
+            {
+                addresses.Remove(addr);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+          public bool isEmpty()
+          {
+            return (addresses.Count == 0);
+          }
 
 
-        public Address find(string firstName)
-       {
+          public Address find(string firstName)
+          {
            Address addr = addresses.Find((a) => a.firstName == firstName);
            return addr;
-       }
+          }
     }
 }
 
