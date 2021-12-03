@@ -32,8 +32,8 @@ class AddressPrompt
         Console.WriteLine("Main Menu");
         Console.WriteLine("=========");
         Console.WriteLine("1. - Add an Address");
-      
-        Console.WriteLine("2. - Quit");
+        Console.WriteLine("2. - Edit the Addresses");
+        Console.WriteLine("3. - Quit");
     }
 
     void performAction(int choice)
@@ -76,9 +76,23 @@ class AddressPrompt
                     Console.WriteLine("An address is already on file for {0}.", firstName);
                 }
                 break;
-         
+            case 2:
+                Console.WriteLine("Enter Name to Edit: ");
+               firstName = Console.ReadLine();
+                Address addr = book.find(firstName);
+                if (addr == null)
+                {
+                   Console.WriteLine("Address for {0} count not be found.", firstName);
+                }
+                else
+                {
+                     Console.WriteLine("Enter new Address: ");
+                    addr.address = Console.ReadLine();
+                    Console.WriteLine("Address updated for {0}", firstName);
+                }
+                break;
 
-                default:
+            default:
                 Console.WriteLine("ReEnter the Choice");
                 break;
         }
