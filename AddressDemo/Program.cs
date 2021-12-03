@@ -33,7 +33,8 @@ class AddressPrompt
         Console.WriteLine("=========");
         Console.WriteLine("1. - Add an Address");
         Console.WriteLine("2. - Edit the Addresses");
-        Console.WriteLine("3. - Quit");
+        Console.WriteLine("3. - Delete an Address");
+        Console.WriteLine("4. - Quit");
     }
 
     void performAction(int choice)
@@ -91,6 +92,18 @@ class AddressPrompt
                     Console.WriteLine("Address updated for {0}", firstName);
                 }
                 break;
+            case 3:
+               Console.WriteLine("Enter Name to Delete: ");
+              firstName = Console.ReadLine();
+              if (book.remove(firstName))
+                 {
+                     Console.WriteLine("Address successfully removed");
+                 }
+                 else
+                 {
+                     Console.WriteLine("Address for {0} could not be found.", firstName);
+                 }
+                 break;
 
             default:
                 Console.WriteLine("ReEnter the Choice");
